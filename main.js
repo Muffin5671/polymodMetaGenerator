@@ -1,6 +1,6 @@
 class PolymodMeta {
   constructor(modName, modDesc, modHome, modContributors, modApi, modVer) {
-    return `{
+    return {meta: `{
       title: ${modName},
       description: ${modDesc},
       homepage: ${modHome},
@@ -8,7 +8,7 @@ class PolymodMeta {
       api_version: ${modApi},
       mod_version: ${modVer},
       license: 'Apache-2.0'
-    }`;
+    }`};
   }
 }
 
@@ -20,5 +20,5 @@ $('#download')[0].addEventListener('click', () => {
     [{name: 'someone', role: 'something'}],
     $('#modApi')[0].value,
     $('#modVer')[0].value
-  )], '_polymod_meta.json'));
+  ).meta], '_polymod_meta.json'));
 })
