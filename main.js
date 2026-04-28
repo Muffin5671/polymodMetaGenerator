@@ -1,14 +1,14 @@
 class PolymodMeta {
   constructor(modName, modDesc, modHome, modContributors, modApi, modVer) {
     return {meta: `{
-      title: ${modName},
-      description: ${modDesc},
-      homepage: ${modHome},
-      contributors: ${modContributors},
-      api_version: ${modApi},
-      mod_version: ${modVer},
-      license: 'Apache-2.0'
-    }`};
+  "title": "${modName}",
+  "description": "${modDesc}",
+  "homepage": "${modHome}",
+  "contributors": "${modContributors}",
+  "api_version": "${modApi}",
+  "mod_version": "${modVer}",
+  "license": "Apache-2.0"
+}`};
   }
 }
 
