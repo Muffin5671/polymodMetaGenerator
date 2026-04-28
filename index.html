@@ -9,6 +9,17 @@
     </style>
     <script src="jquery-4.0.0.min.js"></script>
     <script src="FileSaver.min.js"></script>
+  </head>
+  <body>
+    <fieldset>
+      <legend><h2>Polymod Meta Generator</h2></legend>
+      <input id="modName" placeholder="Mod name">
+      <input id="modDesc" placeholder="Mod description">
+      <br>
+      <input id="modHome" placeholder="Mod homepage">
+      <input id="modContributors" placeholder="Mod contributors">
+      <button id="download">Download</button>
+    </div>
     <script>
       class PolymodMeta {
         constructor(modName, modDesc, modHome, modContributors, modApi, modVer) {
@@ -24,11 +35,11 @@
         }
       }
 
-      jQuery('#download')[0].addEventListener('click', () => {
+      $('#download').addEventListener('click', () => {
         const meta = new PolymodMeta(
-          jQuery('#modName')[0].value,
-          jQuery('#modDesc')[0],value,
-          jQuery('#modHome')[0].value,
+          $('#modName').value,
+          $('#modDesc').value,
+          $('#modHome').value,
           [{name: 'someone', role: 'something'}],
           '0.8.0',
           '1.0.0'
@@ -37,16 +48,5 @@
         saveAs(file);
       })
     </script>
-  </head>
-  <body>
-    <fieldset>
-      <legend><h2>Polymod Meta Generator</h2></legend>
-      <input id="modName" placeholder="Mod name">
-      <input id="modDesc" placeholder="Mod description">
-      <br>
-      <input id="modHome" placeholder="Mod homepage">
-      <input id="modContributors" placeholder="Mod contributors">
-      <button id="download">Download</button>
-    </div>
   </body>
 </html>
