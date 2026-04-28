@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>Polymod Meta Generator</title>
+    <style>
+      input {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script src="jquery-4.0.0.min.js"></script>
     <script src="FileSaver.min.js"></script>
     <script>
       class PolymodMeta {
@@ -17,12 +23,30 @@
           }
         }
       }
+
+      $('#download').addEventListener('click', () => {
+        const meta = new PolymodMeta(
+          $('#modName').value,
+          $('#modDesc'),value,
+          $('#modHome').value,
+          [{name: 'someone', role: 'something'}],
+          '0.8.0',
+          '1.0.0'
+        );
+        const file = new File([JSON.stringify(meta)], '_polymod_meta.json');
+        saveAs(file);
+      })
     </script>
   </head>
   <body>
-    <div>
+    <fieldset>
       <legend><h2>Polymod Meta Generator</h2></legend>
       <input id="modName" placeholder="Mod name">
+      <input id="modDesc" placeholder="Mod description">
+      <br>
+      <input id="modHome" placeholder="Mod homepage">
+      <input id="modContributors" placeholder="Mod contributors">
+      <button id="download">Download</button>
     </div>
   </body>
 </html>
