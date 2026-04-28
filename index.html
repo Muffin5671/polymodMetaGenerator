@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polymod Meta Generator</title>
+    <script src="https://raw.githubusercontent.com/eligrey/FileSaver.js/refs/heads/master/dist/FileSaver.min.js"></script>
+    <script>
+      class PolymodMeta {
+        constructor(modName, modDesc, modHome, modContributors, modApi, modVer) {
+          return {
+            title: modName,
+            description: modDesc,
+            homepage: modHome,
+            contributors: modContributors,
+            api_version: modApi,
+            mod_version: modVer,
+            license: 'Apache-2.0'
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Nothing here... -->
+  </body>
+</html>
