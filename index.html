@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Polymod Meta Generator</title>
-    <script src="https://raw.githubusercontent.com/eligrey/FileSaver.js/refs/heads/master/dist/FileSaver.min.js" type="application/javascript"></script>
+    <script src="FileSaver.min.js"></script>
     <script>
       class PolymodMeta {
         constructor(modName, modDesc, modHome, modContributors, modApi, modVer) {
@@ -20,6 +20,9 @@
     </script>
   </head>
   <body>
-    <!-- Nothing here... -->
+    <div>
+      <legend><h2>Polymod Meta Generator</h2></legend>
+      <input id="modName" placeholder="Mod name">
+    </div>
   </body>
 </html>
