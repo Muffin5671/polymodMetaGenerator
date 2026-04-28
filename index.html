@@ -24,11 +24,11 @@
         }
       }
 
-      $('#download').addEventListener('click', () => {
+      $('#download')[0].addEventListener('click', () => {
         const meta = new PolymodMeta(
-          $('#modName').value,
-          $('#modDesc'),value,
-          $('#modHome').value,
+          $('#modName')[0].value,
+          $('#modDesc')[0],value,
+          $('#modHome')[0].value,
           [{name: 'someone', role: 'something'}],
           '0.8.0',
           '1.0.0'
