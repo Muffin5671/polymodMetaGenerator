@@ -2,11 +2,7 @@
 <html>
   <head>
     <title>Polymod Meta Generator</title>
-    <style>
-      input {
-        margin-bottom: 10px;
-      }
-    </style>
+    <link href="main.css" rel="stylesheet">
     <script src="jquery-4.0.0.min.js"></script>
     <script src="FileSaver.min.js"></script>
     <script src="main.js" defer></script>
@@ -18,12 +14,18 @@
       <input id="modDesc" placeholder="Mod description">
       <br>
       <input id="modHome" placeholder="Mod homepage">
-      <input id="modContributors" placeholder="Mod contributors">
+      <input id="modCont" placeholder="Mod contributors">
       <br>
       <input id="modApi" placeholder="API version">
       <input id="modVer" placeholder="Mod version">
       <br>
-      <button id="download">Download</button>
-    </div>
+      <button id="download" style="
+        margin-top: 10px;
+        padding: 6px 16px;
+      ">Download</button>
+    </fieldset>
+    <p>Note: the mod contributors input is structured like: {"name":"MuffinGDYT","role":"Creator"}. It will be called a contributor object.</p>
+    <br>
+    <p>The role can be anything, and if you want to add another contributor, you have to add a comma to the end of the last contributor object and add another.</p>
   </body>
 </html>
