@@ -30,12 +30,13 @@ function generatePolymodMeta() {
   meta.title = $("#title")[0].value;
   meta.description = $("#desc")[0].value;
   if (!($("#home")[0].value == "")) meta.homepage = $("#home")[0].value;
+  meta.contributors = [];
   for (let i = 0; i < $(".cont").length; i++) {
     let contributor = {};
 
-    contributor.name = $(".cont")[i].children[0].value;
-    contributor.role = $(".cont")[i].children[1].value;
-    if (!($(".cont")[i].children[2].value == "")) contributor.url = $(".cont")[i].children[2].value;
+    contributor.name = $(".cont")[i].children[1].value;
+    contributor.role = $(".cont")[i].children[3].value;
+    if (!($(".cont")[i].children[5].value == "")) contributor.url = $(".cont")[i].children[5].value;
 
     meta.contributors.push(contributor);
   }
@@ -43,7 +44,10 @@ function generatePolymodMeta() {
   meta.mod_version = $("#apiVer")[0].value;
   if (!($("#license")[0].value == "")) meta.license = $("#license")[0].value;
 
-  return JSON.stringify(meta, undefined, 2);
+  if ($("#whitespace")[0].checked) result = JSON.stringify(meta, undefined, 2)
+  else result = JSON.stringify(meta);
+
+  return result;
 }
 
 $("#download")[0].addEventListener("click", () => {

@@ -31,6 +31,18 @@ input {
   outline: none;
 }
 
+select {
+  font-family: Helvetica, sans-serif, system-ui;
+  font-size: 16px;
+  background-image: linear-gradient(#fff, #f7f7f7);
+  color: #222;
+  width: 100px;
+  border: solid 2px #888;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 5px #00000055;
+}
+
 div.box {
   background-color: #ffffff;
   padding: 16px 24px;

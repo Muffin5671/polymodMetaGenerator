@@ -11,7 +11,7 @@
       <h2>Polymod Meta Generator</h2>
       <p>Mod title:</p>
       <input id="title" placeholder="A mod">
-      <p>Mod description</p>
+      <p>Mod description:</p>
       <input id="desc" placeholder="This is a mod">
       <p>Mod homepage (leave blank to not include):</p>
       <input id="homepage" placeholder="https://example.com/">
@@ -23,8 +23,10 @@
       <input id="apiVer" placeholder="1.5.0">
       <p>Mod version:</p>
       <input id="modVer" placeholder="1.0.0">
-      <div style="display: flex; flex-direction: row; align-items: flex-end;">
-        <input type="checkbox">
+      <p>License (leave blank to not include):</p>
+      <input id="license" placeholder="MIT">
+      <div style="display: flex; flex-direction: row; align-items: flex-end; margin-bottom: 20px;">
+        <input type="checkbox" id="whitespace">
         <p>Whitespace</p>
       </div>
       <button id="download">Download</button>
