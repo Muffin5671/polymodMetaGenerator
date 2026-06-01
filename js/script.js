@@ -41,7 +41,7 @@ function generatePolymodMeta() {
     meta.contributors.push(contributor);
   }
   meta.api_version = $("#apiVer")[0].value;
-  meta.mod_version = $("#apiVer")[0].value;
+  meta.mod_version = $("#modVer")[0].value;
   if (!($("#license")[0].value == "")) meta.license = $("#license")[0].value;
 
   if ($("#whitespace")[0].checked) result = JSON.stringify(meta, undefined, 2)
