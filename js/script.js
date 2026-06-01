@@ -1,14 +1,28 @@
-$("#add").addEventListener("click", () => {
+$("#add")[0].addEventListener("click", () => {
   let cont = document.createElement("div");
   cont.className = "cont";
+  let cNameLabel = document.createElement("p");
+  cNameLabel.innerText = "Name:";
   let cName = document.createElement("input");
+  let cRoleLabel = document.createElement("p");
+  cRoleLabel.innerText = "Role:";
   let cRole = document.createElement("input");
+  let cURLLabel = document.createElement("p");
+  cURLLabel.innerText = "URL (leave blank to not include):";
   let cURL = document.createElement("input");
+  cont.appendChild(cNameLabel);
   cont.appendChild(cName);
+  cont.appendChild(cRoleLabel);
   cont.appendChild(cRole);
+  cont.appendChild(cURLLabel);
   cont.appendChild(cURL);
-  $(".box")[0].appendChild(cont);
-})
+  $("#contributors")[0].appendChild(cont);
+});
+
+$("#remove")[0].addEventListener("click", () => {
+  let last = $(".cont").length - 1;
+  $(".cont")[last].remove();
+});
 
 function generatePolymodMeta() {
   let meta = {};
