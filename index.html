@@ -9,9 +9,23 @@
   <body>
     <div class="box">
       <h2>Polymod Meta Generator</h2>
-      <input id="title" placeholder="Required">
-      <input id="desc" placeholder="Required">
-      <input id="homepage" placeholder="Optional (Leave blank to not include)">
+      <p>Mod title:</p>
+      <input id="title" placeholder="A mod">
+      <p>Mod description</p>
+      <input id="desc" placeholder="This is a mod">
+      <p>Mod homepage (leave blank to not include):</p>
+      <input id="homepage" placeholder="https://example.com/">
+      <p>Mod contributors:</p>
+      <button id="add">+</button>
+      <button id="remove">-</button>
+      <p>API version:</p>
+      <input id="apiVer" placeholder="1.5.0">
+      <p>Mod version:</p>
+      <input id="modVer" placeholder="1.0.0">
+      <div style="display: flex; flex-direction: row; align-items: flex-end;">
+        <input type="checkbox">
+        <p>Whitespace</p>
+      </div>
       <button id="download">Download</button>
     </div>
     <script src="js/script.js"></script>
