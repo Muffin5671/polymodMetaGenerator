@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Polymod Meta Generator (Legacy)</title>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script src="../js/jquery-4.0.0.min.js"></script>
+    <script src="../js/FileSaver.min.js"></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <fieldset>
+      <legend><h2>Polymod Meta Generator</h2></legend>
+      <input id="modName" placeholder="Mod name">
+      <input id="modDesc" placeholder="Mod description">
+      <br>
+      <input id="modHome" placeholder="Mod homepage">
+      <input id="modCont" placeholder="Mod contributors">
+      <br>
+      <input id="modApi" placeholder="API version">
+      <input id="modVer" placeholder="Mod version">
+      <br>
+      <button id="download" style="
+        margin-top: 10px;
+        padding: 6px 16px;
+      ">Download</button>
+    </fieldset>
+    <p>Note: the mod contributors input is structured like: {"name":"MuffinGDYT","role":"Creator"}. I will call it a contributor object.</p>
+    <p>The role can be anything, and if you want to add another contributor, you have to add a comma to the end of the last contributor object and add another.</p>
+  </body>
+</html>
