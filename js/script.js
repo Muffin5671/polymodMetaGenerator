@@ -4,12 +4,15 @@ $("#add")[0].addEventListener("click", () => {
   let cNameLabel = document.createElement("p");
   cNameLabel.innerText = "Name:";
   let cName = document.createElement("input");
+  cName.placeholder = "Username";
   let cRoleLabel = document.createElement("p");
   cRoleLabel.innerText = "Role:";
   let cRole = document.createElement("input");
+  cRole.placeholder = "Creator / Musician";
   let cURLLabel = document.createElement("p");
   cURLLabel.innerText = "URL (leave blank to not include):";
   let cURL = document.createElement("input");
+  cURL.placeholder = "https://example.com/";
   cont.appendChild(cNameLabel);
   cont.appendChild(cName);
   cont.appendChild(cRoleLabel);
