@@ -8,7 +8,7 @@ $("#add")[0].addEventListener("click", () => {
   let cRoleLabel = document.createElement("p");
   cRoleLabel.innerText = "Role:";
   let cRole = document.createElement("input");
-  cRole..setAttribute("placeholder", "Creator / Musician");
+  cRole.setAttribute("placeholder", "Creator / Musician");
   let cURLLabel = document.createElement("p");
   cURLLabel.innerText = "URL (leave blank to not include):";
   let cURL = document.createElement("input");
@@ -55,14 +55,7 @@ function generatePolymodMeta() {
   return result;
 }
 
-$("#download")[0].addEventListener("click", () => {
-  let file = new File(
-    [generatePolymodMeta()],
-    "_polymod_meta.json",
-  );
-
-  saveAs(file);
-});
+$("#download")[0].addEventListener("click", () => saveAs(generatePolymodMeta(), "_polymod_meta.json"));
 
 $("#loadFile")[0].addEventListener("click", () => {
   let fileInput = document.createElement("input");
@@ -75,7 +68,18 @@ $("#loadFile")[0].addEventListener("click", () => {
     else {
       fileInput.files[0].text()
       .then(content => {
-        let meta = JSON.parse(content);
+        if (fileInput.files[0].type == "application/json") {
+          try {
+            let meta = JSON.parse(content);
+          } catch (e) {
+            alert(`There was an error importing the file: ${e}`);
+            throw new Error(`There was an error importing the file: ${e}`);
+          }
+        }
+        else {
+          alert("File must be .json to load");
+          throw new Error("File must be .json to load");
+        }
 
         $("#title")[0].value = meta.title;
         $("#desc")[0].value = meta.description;
