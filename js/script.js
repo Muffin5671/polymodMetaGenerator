@@ -57,7 +57,7 @@ function generatePolymodMeta() {
 
 $("#download")[0].addEventListener("click", () => {
   let file = new File([generatePolymodMeta()], "_polymod_meta.json");
-  saveAs(generatePolymodMeta(), "_polymod_meta.json");
+  saveAs(file);
 });
 
 $("#loadFile")[0].addEventListener("click", () => {
