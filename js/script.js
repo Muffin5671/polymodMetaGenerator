@@ -23,8 +23,10 @@ $("#add")[0].addEventListener("click", () => {
 });
 
 $("#remove")[0].addEventListener("click", () => {
-  let last = $(".cont").length - 1;
-  $(".cont")[last].remove();
+  if ($(".cont").length == 0) {
+    let last = $(".cont").length - 1;
+    $(".cont")[last].remove();
+  }
 });
 
 function generatePolymodMeta() {
