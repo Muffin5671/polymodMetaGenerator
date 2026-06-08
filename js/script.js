@@ -71,9 +71,10 @@ $("#loadFile")[0].addEventListener("click", () => {
     else {
       fileInput.files[0].text()
       .then(content => {
+        let meta;
         if (fileInput.files[0].type == "application/json") {
           try {
-            let meta = JSON.parse(content);
+            meta = JSON.parse(content);
           } catch (e) {
             alert(`There was an error importing the file: ${e}`);
             throw new Error(`There was an error importing the file: ${e}`);
