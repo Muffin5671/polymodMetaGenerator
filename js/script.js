@@ -23,7 +23,7 @@ $("#add")[0].addEventListener("click", () => {
 });
 
 $("#remove")[0].addEventListener("click", () => {
-  if ($(".cont").length == 0) {
+  if (!($(".cont").length == 0)) {
     let last = $(".cont").length - 1;
     $(".cont")[last].remove();
   }
