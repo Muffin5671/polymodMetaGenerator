@@ -64,52 +64,47 @@ $("#loadFile")[0].addEventListener("click", () => {
   let fileInput = document.createElement("input");
   fileInput.setAttribute("type", "file");
   fileInput.setAttribute("accept", "application/json");
+  fileInput.addEventListener("oninput", (event) => {
+    fileInput.files[0].text()
+    .then(content => {
+      let meta;
+      if (fileInput.files[0].type == "application/json") {
+        try {
+          meta = JSON.parse(content);
+        } catch (e) {
+          alert(`There was an error importing the file: ${e}`);
+          throw new Error(`There was an error importing the file: ${e}`);
+        }
+      }
+      else {
+        alert("File must be .json to load");
+        throw new Error("File must be .json to load");
+      }
+
+      $("#title")[0].value = meta.title;
+      $("#desc")[0].value = meta.description;
+      if (!(meta.homepage == undefined)) $("#home")[0].value = meta.homepage
+      else $("#home")[0].value = "";
+      if (!($(".cont").length == 0)) {
+        do {
+          $(".cont")[0].remove();
+        } while (!($(".cont").length == 0))
+      }
+      let i = 0;
+      meta.contributors.forEach(cont => {
+        $("#add")[0].click();
+        $(".cont")[i].children[1].value = cont.name;
+       $(".cont")[i].children[3].value = cont.role;
+        if (!(cont.url == undefined)) $(".cont")[i].children[5].value = cont.url
+        else $(".cont")[i].children[5].value = "";
+        i++;
+      })
+      $("#apiVer")[0].value = meta.api_version;
+      $("#modVer")[0].value = meta.mod_version;
+      if (!(meta.license == undefined)) $("#license")[0].value = meta.license
+      else $("#license")[0].value = "";
+      $("#whitespace")[0].checked = /\n/.test(content);
+    });
+  });
   fileInput.click();
-
-  onfocus = () => {
-    if (fileInput.files[0] == undefined) onfocus = null
-    else {
-      fileInput.files[0].text()
-      .then(content => {
-        let meta;
-        if (fileInput.files[0].type == "application/json") {
-          try {
-            meta = JSON.parse(content);
-          } catch (e) {
-            alert(`There was an error importing the file: ${e}`);
-            throw new Error(`There was an error importing the file: ${e}`);
-          }
-        }
-        else {
-          alert("File must be .json to load");
-          throw new Error("File must be .json to load");
-        }
-
-        $("#title")[0].value = meta.title;
-        $("#desc")[0].value = meta.description;
-        if (!(meta.homepage == undefined)) $("#home")[0].value = meta.homepage
-        else $("#home")[0].value = "";
-        if (!($(".cont").length == 0)) {
-          do {
-            $(".cont")[0].remove();
-           } while (!($(".cont").length == 0))
-        }
-        let i = 0;
-        meta.contributors.forEach(cont => {
-          $("#add")[0].click();
-          $(".cont")[i].children[1].value = cont.name;
-          $(".cont")[i].children[3].value = cont.role;
-          if (!(cont.url == undefined)) $(".cont")[i].children[5].value = cont.url
-          else $(".cont")[i].children[5].value = "";
-          i++;
-        })
-        $("#apiVer")[0].value = meta.api_version;
-        $("#modVer")[0].value = meta.mod_version;
-        if (!(meta.license == undefined)) $("#license")[0].value = meta.license
-        else $("#license")[0].value = "";
-        $("#whitespace")[0].checked = /\n/.test(content);
-      });
-      onfocus = null;
-    }
-  }
 });
