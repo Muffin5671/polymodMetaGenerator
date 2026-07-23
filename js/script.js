@@ -56,12 +56,12 @@ function generatePolymodMeta() {
 }
 
 $("#download")[0].addEventListener("click", () => {
-  let file = new File([generatePolymodMeta()], "_polymod_meta.json");
+  const file = new File([generatePolymodMeta()], "_polymod_meta.json");
   saveAs(file);
 });
 
 $("#loadFile")[0].addEventListener("click", () => {
-  let fileInput = document.createElement("input");
+  const fileInput = document.createElement("input");
   fileInput.setAttribute("type", "file");
   fileInput.setAttribute("accept", "application/json");
   fileInput.addEventListener("oninput", (event) => {
