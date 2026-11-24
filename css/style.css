@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(#fff, #eee);
+  background-image: linear-gradient(#fff, #efefef);
   background-attachment: fixed;
 }
 
@@ -13,7 +13,7 @@ p {
 
 h2 {
   font-family: Helvetica, sans-serif, system-ui;
-  font-size: 24px;
+  font-size: 26px;
   color: #222;
   margin: 10px 0 30px;
   text-shadow: 0 1px 8px #0000001c;
@@ -24,7 +24,7 @@ input {
   font-size: 16px;
   background-image: linear-gradient(#fff, #f7f7f7);
   color: #222;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border: solid 2px #888;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -37,7 +37,7 @@ textarea {
   font-size: 16px;
   background-image: linear-gradient(#fff, #f7f7f7);
   color: #222;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border: solid 2px #888;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -62,7 +62,7 @@ div.box {
   padding: 16px 24px;
   border: none 8px;
   border-radius: 8px;
-  box-shadow: 0 1px 5px #00000070;
+  box-shadow: 0 1px 9px 0px #00000070;
 }
 
 button {
