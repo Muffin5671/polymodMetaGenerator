@@ -8,7 +8,7 @@ p {
   font-size: 18px;
   color: #222;
   margin-bottom: 5px;
-  text-shadow: 0 1px 8px #00000055;
+  text-shadow: 0 1px 8px #00000030;
 }
 
 h2 {
@@ -16,7 +16,7 @@ h2 {
   font-size: 24px;
   color: #222;
   margin: 10px 0 30px;
-  text-shadow: 0 1px 8px #00000033;
+  text-shadow: 0 1px 8px #0000001c;
 }
 
 input {
